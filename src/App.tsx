@@ -9,7 +9,7 @@ import Report from './views/Report'
 function App() {
 
   return (
-    <div className='w-[1480px] m-0 p-0 border-box'>
+    // <div className='w-[1480px] m-0 p-0 border-box'>
 <Router>
       <Routes>
         <Route index element={<Login/>}/>
@@ -23,7 +23,7 @@ function App() {
       </Routes>
       
     </Router>
-    </div>
+    // </div>
     
   )
 }
