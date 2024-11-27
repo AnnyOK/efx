@@ -15,7 +15,7 @@ const Dashboard = () => {
 setActiveIndex(title)
 navigate(to)
     }
-
+ //fix styling issue
     useEffect(()=>{
         console.log(location)
         switch(location){
