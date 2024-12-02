@@ -46,14 +46,14 @@ const Home = () => {
 			>
 				{' '}
 <ViewVolumeModal/>			</Modal>
-			<div className='flex items-stretch justify-start border-b-2 border-b-orange-500 p-0 flex-1'>
+			<div className='flex items-center justify-start border-b-2 border-b-orange-500 p-0 flex-1'>
 				<img
 					src={giticon}
 					alt=''
 					width={74}
 					height={74}
 				/>
-				<p className='text-[38px] font-bold'>
+				<p className='text-[26px] font-latoBold'>
 					Daily Request
 				</p>
 			</div>
@@ -163,7 +163,7 @@ const NavButton: React.FC<NavButtonProp> = ({
 	};
 	return (
 		<div
-			className={`hover:bg-orange-100 flex items-center gap-2 justify-center flex-1 p-4 rounded-md border-2 min-w-[250px] max-w-full  border-orange-400`}
+			className={`hover:bg-orange-100 flex items-center font-latoBold text-[13px] text-black gap-2 justify-center flex-1 p-4 rounded-md border-2 min-w-[250px] max-w-full  border-orange-400`}
 			onClick={handleClick}
 		>
 			{children}

@@ -23,7 +23,7 @@ const Report = () => {
 			
 			<div className='flex items-center justify-start border-b-2 border-b-orange-500 p-0 flex-1'>
             <TbScript className='rounded-full bg-[#f9e9e9] p-2 text-[39px]  border-white font-thin' />
-				<p className='text-[38px] font-bold'>
+				<p className='text-[26px] font-latoBold'>
 					Report
 				</p>
 			</div>
@@ -115,7 +115,7 @@ const Button: React.FC<ButtonProp> = ({
 	
 	return (
 		<div
-			className={`${style} hover:pointer flex items-center gap-2 justify-center  py-4 px-10 rounded-md `}
+			className={`${style} hover:pointer flex items-center gap-2 justify-center font-latoBold text-[14px] py-4 px-10 rounded-md `}
 			onClick={onClick}
 		>
 			{children}

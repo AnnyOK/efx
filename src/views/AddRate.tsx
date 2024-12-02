@@ -20,7 +20,7 @@ const AddRate = () => {
     <div className="bg-white shadow-md rounded-xl p-8 pb-20 w-full ">
       <div className="flex items-center justify-start border-b-2 border-b-orange-500 p-0 flex-1 ">
         <img src={exchange} alt="" width={74} height={74} />
-        <p className="text-[38px] font-bold">Add Rate {proceed&&'Summary'}</p>
+        <p className="text-[26px] font-latoBold">Add Rate {proceed&&'Summary'}</p>
       </div>
       <div className="flex flex-col items-start justify-start border-b-2 border-b-orange-500 py-4 flex-1  ">
         <p className="text-red-600 col-span-2 text-left">

@@ -60,29 +60,27 @@ const [modalOpen,toggleClose] = useState(false)
 						
 						<div className='text-left flex-1 min-w-[320px] px-[50px] py-10 h-fit flex flex-col gap-4  items-stretch justify-between bg-white rounded-md m-10 relative left-[0] animate-animatePosition'>
 							<h1
-								className='font-family-[Lato-Bold] '
-								style={{
-									fontFamily: 'Lato',
-								}}
+								className='font-latoBlack text-[24px] '
+								
 							>
 								CMB eFX Naira Conversion Portal
 							</h1>
-							<h2 className='font-semibold'>
+							<h2 className='font-latoMedium text-[24px]'>
 								Login
 							</h2>
-							<span className='t text-[13px]'>
+							<span className='font-light text-[14px]'>
                             Kindly sign in with your Coronation Merchant Bank credential to continue.
 							</span>
 							<label
 								htmlFor='username'
-								className='flex flex-col text-left w-full'
+								className='flex flex-col text-left gap-4 w-full font-latoMedium text-[14px]'
 							>
 								Username
 								<Field
 									type='text'
 									placeholder='Username'
 									name='username'
-									className='w-full px-4 py-4 rounded-lg shadow-md text-[15px] text-black bg-[#fbfbfb] focus:border-b-2  focus:animate-animateBorderColor focus:border-b-orange-500 outline-none focus:animate-fade-in duration-800 '
+									className='w-full px-4 py-3 rounded-lg shadow-md text-[15px] text-black focus:bg-[#fbfbfb] focus:border-b-2  focus:animate-animateBorderColor focus:border-b-orange-500 outline-none focus:animate-fade-in duration-800 '
 								/>
 								<ErrorMessage
 									name='username'
@@ -92,14 +90,14 @@ const [modalOpen,toggleClose] = useState(false)
 							</label>
 							<label
 								htmlFor='password'
-								className='flex flex-col text-left  gap-4 '
+								className='flex flex-col text-left  gap-4  font-latoMedium text-[14px]'
 							>
 								Password
 								<Field
 									type='password'
 									placeholder='Password'
 									name='password'
-									className='w-full px-4 py-4 rounded-lg shadow-md text-[15px] text-black bg-[#fbfbfb] focus:border-b-2  focus:animate-animateBorderColor focus:border-b-orange-500 outline-none focus:animate-fade-in duration-800 '
+									className='w-full px-4 py-3 rounded-lg shadow-md text-[15px] text-black bg-[#fbfbfb] focus:border-b-2  focus:animate-animateBorderColor focus:border-b-orange-500 outline-none focus:animate-fade-in duration-800 '
 								/>
 								<ErrorMessage
 									name='password'
@@ -110,7 +108,7 @@ const [modalOpen,toggleClose] = useState(false)
 							<button
 								disabled={values.password==''|| values.username==''||isSubmitting}
                                 type='submit'
-								className='bg-gradient-to-r from-orange-500 to-red-500  disabled:bg-gray-300 text-white font-bold text-[15px] flex justify-center gap-4 items-center w-full rounded-md uppercase'
+								className='bg-gradient-to-r from-orange-500 to-red-500  disabled:bg-gray-300 text-white font-bold text-[15px] mt-6 flex justify-center gap-4 items-center w-full rounded-md uppercase'
 							>
 								<IoMdLogIn className='text-[2rem]' />
 								Login
