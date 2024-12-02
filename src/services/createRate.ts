@@ -1,5 +1,5 @@
 import { Axios } from "./axios"
-enum Status{
+export enum Status{
     APPROVED='APPROVED',
     PENDING='PENDING',
     REJECTED='REJECTED'

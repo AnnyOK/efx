@@ -2,16 +2,32 @@ import React, { useState } from 'react'
 import exchange from '../assets/images/exchange.png'
 import { CiLogin } from 'react-icons/ci'
 import { BiSolidUserX, LiaUserEditSolid } from '../utils/reacticon'
+import { createRate, Status } from '../services/createRate'
 
 const AddRate = () => {
     const [proceed,setProceed] = useState(false)
+    const [dollarRate,setDollerRate] =useState({bid:'',offer:''})
+    const [poundRate,setPoundRate] =useState({bid:'',offer:''})
+    const [euroRate,setEuroRate] =useState({bid:'',offer:''})
+   
     const handleContinueAndEdit=() => {
             setProceed(!proceed)
             return
     }
-    const handleCancelAndSubmit=() => {
+    const handleCancelAndSubmit= async() => {
         if(proceed){
             console.log('handling submit')
+            if(!dollarRate.bid||!dollarRate.offer||!poundRate.bid||!poundRate.offer||!euroRate.bid||!euroRate.offer){
+console.log('details incomplete')
+return
+
+            }
+          Promise.all([
+            await createRate({fromCurrency:'USD',toCurrency:'NGN',initiator:'',status:Status.PENDING,bid:Number(dollarRate.bid),offer:Number(dollarRate.offer)}),
+            await createRate({fromCurrency:'GBP',toCurrency:'NGN',initiator:'',status:Status.PENDING, bid:Number(poundRate.bid),offer:Number(poundRate.offer)}),
+            await createRate({fromCurrency:'EUR',toCurrency:'NGN',initiator:'',status:Status.PENDING, bid:Number(euroRate.bid),offer:Number(euroRate.offer)})
+          ]
+          )
         }else{
             console.log("reset form")
         }
@@ -36,6 +52,8 @@ const AddRate = () => {
               <p>BID</p>
               <input id='dollarbid' type="number" placeholder='Enter Amount'
                className={`${proceed?"bg-gray-50 shadow-sm ":"bg-gray-100 shadow-sm border"}} outline-none rounded-lg p-4 min-w-[300px]`}
+               value={dollarRate.bid}
+               onChange={(e)=>setDollerRate({...dollarRate, bid:e.target.value})}
                readOnly={proceed}
                />
             </label>
@@ -43,6 +61,8 @@ const AddRate = () => {
               <p>Offer</p>
               <input id='dollaroffer' type="number" placeholder='Enter Amount' 
                className={`${proceed?"bg-gray-50 shadow-sm ":"bg-gray-100 shadow-sm border"}} outline-none rounded-lg p-4 min-w-[300px]`}
+               value={dollarRate.offer}
+               onChange={(e)=>setDollerRate({...dollarRate, offer: e.target.value})}
                readOnly={proceed}
                />
             </label>
@@ -55,6 +75,9 @@ const AddRate = () => {
               <p>BID</p>
               <input id='poundbid' type="number" placeholder='Enter Amount'
                className={`${proceed?"bg-gray-50 shadow-sm ":"bg-gray-100 shadow-sm border"}} outline-none rounded-lg p-4 min-w-[300px]`}
+               
+               value={poundRate.bid}
+               onChange={(e)=>setPoundRate({...poundRate, bid:e.target.value})}
                readOnly={proceed}
 
                />
@@ -63,6 +86,8 @@ const AddRate = () => {
               <p>Offer</p>
               <input id='poundoffer' type="number" placeholder='Enter Amount' 
                className={` ${proceed?"bg-gray-50 shadow-sm ":"bg-gray-100 shadow-sm border "}} outline-none rounded-lg p-4 min-w-[300px]`}
+               value={poundRate.offer}
+               onChange={(e)=>setPoundRate({...poundRate, offer:e.target.value})}
                readOnly={proceed}
 
                />
@@ -76,7 +101,10 @@ const AddRate = () => {
               <p>BID</p>
               <input id='eurobid' type="number" placeholder='Enter Amount'
                className={`${proceed?"bg-gray-50 shadow-sm ":"bg-gray-100 shadow-sm border"}} outline-none rounded-lg p-4 min-w-[300px]`}
-               readOnly={proceed}
+               value={euroRate.bid}
+              
+               onChange={(e)=>setEuroRate({...euroRate, bid:e.target.value})}
+                readOnly={proceed}
 
                />
             </label>
@@ -84,7 +112,8 @@ const AddRate = () => {
               <p>Offer</p>
               <input id='eurooffer' type="number" placeholder='Enter Amount' 
                className={`${proceed?"bg-gray-50  ":"bg-gray-100 shadow-sm "} outlinbordere-none rounded-lg p-4 min-w-[300px]`}
-               readOnly={proceed}
+               value={euroRate.offer}
+               onChange={(e)=>setEuroRate({...euroRate, offer: e.target.value})}readOnly={proceed}
                />
             </label>
           </div>

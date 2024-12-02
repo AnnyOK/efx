@@ -22,7 +22,7 @@ navigate(to)
             }
  //fix styling issue
     useEffect(()=>{
-        console.log(location)
+        // console.log(location)
         switch(location){
             case undefined:
             setActiveIndex("Home")
