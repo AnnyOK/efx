@@ -14,6 +14,7 @@ export default {
       animation: {
         smartRotate: 'smartRotate 1s ease-in-out ',
         animatePosition: 'animatePosition 1s ease-in-out',
+        animatePosition: 'animateDrop 1s ease-in-out',
         animateBorderColor:'animateBorderColor 1s ease-in-out'
       }
     },

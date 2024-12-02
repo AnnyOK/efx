@@ -18,7 +18,7 @@ export const Modal:React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
           onClick={(e) => e.stopPropagation()}
         >
           <button
-            className="absolute top-[10px] right-[10px] bg-transparent p-3 text-[24px] cursor-pointer text-red-600 hover:text-red-900 font-bold "
+            className="absolute top-[10px] right-[10px] bg-transparent p-3 text-[24px] cursor-pointer text-gray-600 hover:text-red-900 font-bold "
             onClick={onClose}
           >
             &times;

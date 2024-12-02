@@ -73,20 +73,19 @@ a:hover {
 
 body {
 	margin: 0;
-  box-sizing: border-box;
-	display: flex;
   background-image: url('./assets/images/bg-image.svg');
-	flex-direction: column;
-  align-items: center;
-  width: 100vw;
-	place-items: center;
-	min-width: 320px;
-	min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: #ccc;
+  min-height: 100vh;
 }
 
 h1 {
 	font-size: 1.8em;
 	line-height: 1.1;
+
 }
 
 button {
@@ -128,6 +127,14 @@ button:focus-visible {
     left: 0;
   }
 }
+@keyframes animateDrop {
+	from {
+	  top: -700px;
+	}
+	to {
+	  top: 0;
+	}
+  }
 @keyframes animateBorderColor {
   from {
     border-bottom-color: rgba(251, 120, 81, 0);

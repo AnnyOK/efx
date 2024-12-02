@@ -3,8 +3,12 @@ import giticon from '../assets/images/favicon1.png';
 import { MdOutlineAddToPhotos } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
 import { Modal } from '../components/modal';
-import RateTable from './RateTable';
-import VolumeTable from './VolumeTable';
+import RateTable from './tables/RateTable';
+import VolumeTable from './tables/VolumeTable';
+import ViewRateModal from './ViewRateModal';
+import ViewVolumeModal from './ViewVolume';
+// import ColoredSVG from '../components/coloredsvg';
+// const ViewRateModal = React.lazy(() => import('./ViewRateModal'))
 type NavButtonProp = {
 	title: string;
 	children: React.ReactNode;
@@ -28,21 +32,20 @@ const Home = () => {
 		setViewVolume(true);
 	};
 	return (
-		<div className='rounded-md shadow-md p-4 bg-white flex flex-col w-fit flex-1 '>
+		<div className='rounded-xl shadow-md p-4 bg-white flex flex-col w-fit flex-1 '>
 			<Modal
 				isOpen={viewRate}
 				onClose={() => setViewRate(false)}
 			>
 				{' '}
-				view rate
+				<ViewRateModal/>
 			</Modal>
 			<Modal
 				isOpen={viewVolume}
 				onClose={() => setViewVolume(false)}
 			>
 				{' '}
-				view Volume
-			</Modal>
+<ViewVolumeModal/>			</Modal>
 			<div className='flex items-stretch justify-start border-b-2 border-b-orange-500 p-0 flex-1'>
 				<img
 					src={giticon}
@@ -54,7 +57,7 @@ const Home = () => {
 					Daily Request
 				</p>
 			</div>
-			<div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4  gap-x-10 py-10 w-full '>
+			<div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4  gap-x-10 gap-y-5 py-10 w-full '>
                 <NavButton
 					title={'ADD RATE'}
 					children={<MdOutlineAddToPhotos />}
@@ -160,7 +163,7 @@ const NavButton: React.FC<NavButtonProp> = ({
 	};
 	return (
 		<div
-			className={`hover:bg-orange-100 flex items-center gap-2 justify-center flex-1 p-2 rounded-md border-2 min-w-[250px]  border-orange-400`}
+			className={`hover:bg-orange-100 flex items-center gap-2 justify-center flex-1 p-4 rounded-md border-2 min-w-[250px] max-w-full  border-orange-400`}
 			onClick={handleClick}
 		>
 			{children}
