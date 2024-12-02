@@ -8,3 +8,5 @@ export { BiSolidUserX } from "react-icons/bi";
 export { LiaUserEditSolid } from "react-icons/lia";
 export { TbScript } from "react-icons/tb";
 export { FaRegThumbsUp } from "react-icons/fa6";
+export { FaFileImport } from "react-icons/fa6";
+export { FaFilter } from "react-icons/fa";

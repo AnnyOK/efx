@@ -4,7 +4,7 @@ import { MdOutlineAddToPhotos } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
 import RateTable from './tables/RateTable';
 import VolumeTable from './tables/VolumeTable';
-import { TbScript } from '../utils/reacticon';
+import { FaFileImport, FaFilter, TbScript } from '../utils/reacticon';
 type ButtonProp = {
 	title: string;
 	children: React.ReactNode;
@@ -28,7 +28,7 @@ const Report = () => {
 				</p>
 			</div>
             <div className='flex justify-end  border-b-2 border-b-orange-500 py-6 gap-4 flex-1 flex-wrap'>
-            <Button title={'EXPORT'} children={''} onClick={() => ''} style={'bg-gradient-to-r from-orange-500 to-red-500 text-white  '}/>
+            <Button title={'EXPORT'} children={<FaFileImport/>} onClick={() => ''} style={'bg-gradient-to-r from-orange-500 to-red-500 text-white  '}/>
                <div className='w-full flex justify-end   flex-wrap gap-4'>
                  <label htmlFor="from" className='flex flex-wrap items-center gap-4 justify-end'>
                     Filter from:
@@ -38,7 +38,7 @@ const Report = () => {
                    to:
                     <input name='to' type="date" className='outline-none shadow-md rounded-lg p-4' />
                 </label>
-            <Button title={'FILTER'} children={''} onClick={() => ''} style={'text-white bg-black'}/></div>
+            <Button title={'FILTER'} children={<FaFilter/>} onClick={() => ''} style={'text-white bg-black'}/></div>
 			</div>
 
 			
